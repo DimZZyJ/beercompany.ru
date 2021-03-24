@@ -1,0 +1,96 @@
+<!DOCTYPE HTML >
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>Машины</title>
+        <script>
+            var i = 0;
+            function infoshow(num){
+                ar = new Array('Ferrari 1000000$','Ford Mustang GT 50000$','Chevrolet Camaro SS 4000$','Ferrari Hunter 2000000$','');
+                var r = document.getElementById('info');
+                r.value=ar[num];
+            }
+            function slideshow(){
+                var img = new Array('https://klv-oboi.ru/img/gallery/30/thumbs/0939-340.jpg','https://pbs.twimg.com/media/DDrPMFDXYAAofPg.jpg','https://smolmotor.ru/upload/medialibrary/21e/21e69fd5af71041750a27f83c061b979.jpg','http://automdb.com/thumb/ferrari/ferrari_laferrari_coupe_1_thumb3.jpg');
+                i=i+1;
+                if (i>3) i=0;
+                var r = document.getElementById('slide');
+                r.src=img[i];
+            }
+        </script>
+	</head>
+	<body>
+        <div style="background-color: burlywood;">
+            <h1 style="text-align: center;">Продаются Автомобили</h1>
+            <div style="text-align: center;">
+                <img src="https://klv-oboi.ru/img/gallery/30/thumbs/0939-340.jpg" onmouseout="infoshow(4)" onmouseover="infoshow(0)" height="300" width="300" /> <img src="https://pbs.twimg.com/media/DDrPMFDXYAAofPg.jpg" onmouseout="infoshow(4)"  onmouseover="infoshow(1)" height="300" width="300" />
+            </div>
+            <div style="text-align: center;">
+                <img src="https://smolmotor.ru/upload/medialibrary/21e/21e69fd5af71041750a27f83c061b979.jpg" onmouseout="infoshow(4)" onmouseover="infoshow(2)" height="300" width="300" /> <img src="http://automdb.com/thumb/ferrari/ferrari_laferrari_coupe_1_thumb3.jpg" onmouseout="infoshow(4)"  onmouseover="infoshow(3)" height="300" width="300" />
+            </div>
+            <p style="text-align: center;"><input id="info" name="info" id='info' type="text" value="" size="50"></p>
+        </div>
+        <div style="background-color: burlywood;">
+            <img id="slide" style="margin-top: 25px; height: 300px; width: 300px;" src="https://klv-oboi.ru/img/gallery/30/thumbs/0939-340.jpg"/><br/>
+            <input type="button" value="показать следущую" onclick="slideshow()" />
+        </div>
+       <p  style=" text-align: center; font-weight: bold; font-size: 30px;">Лабораторная работа 4.7</p>
+       <script>
+           function changeclr(){
+               var r = document.getElementById('unkown');
+               var r1 = document.getElementById('b1');
+               if (r.style.borderColor=='blue'){
+                r.style.borderColor='gray';
+                r1.value='Сменить на синий';
+               } 
+                else {
+                    r.style.borderColor='blue';
+                    r1.value='Сменить на серый';
+                } 
+               
+           }
+       </script>
+       <div style="background-color: burlywood;">
+            <img style=" border: 50px inset gray;" src="https://rbsmi.ru/upload/iblock/226/2262d8492aee68d2c625d08828ac9919.jpg" id="unkown" width="400" height="750"/><br/>
+            <input id="b1" type="button" value="сменить на синий" onclick="changeclr()" />
+        </div>
+        
+        <script>
+            function imageshow(){
+                var s = document.getElementById('stih');
+                var i = document.getElementById('kartinka');
+                if (s.style.display=='none'){
+                    s.style.display='block';
+                    i.style.display='none';
+                }
+                else {
+                    s.style.display='none';
+                    i.style.display='block';
+                }
+            }
+        </script>
+        <div style="background-color: darkblue;text-align: center; margin-right: 80%;">
+            <h2 style="color: white; text-align: center;">Свечку внесли</h2>
+            <img id="kartinka" src="https://mash.ie/wp-content/uploads/2016/01/p-1.jpg" style="display: none;"/>
+           <div  id="stih" style=" color: white; background-color: darkblue; border: 5px solid  #ffA089;padding: 10px;">
+            Не мерещится ль вам иногда, <br/>
+            Когда сумерки ходят по дому, <br/>
+            Тут же возле иная среда,<br/>
+            Где живем мы совсем по-другому?<br/>
+            С тенью тень там так мягко слилась,<br/>
+            Там бывает такая минута,<br/>
+            Что лучами незримыми глаз<br/>
+            Мы уходим друг в друга как будто.<br/>
+            И движеньем спугнуть этот миг<br/>
+            Мы боимся, иль словом нарушить,<br/>
+            Точно ухом кто возле приник,<br/>
+            Заставляя далекое слушать.<br/>
+            Но едва запылает свеча,<br/>
+            Чуткий мир уступает без боя,<br/>
+            Лишь из глаз по наклонам луча<br/>
+            Тени в пламя сбегут голубое.<br/>
+           </div> 
+           <input type="button" value="Свечка" style="width: 100%;" onclick="imageshow()"/>
+        </div>
+	</body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE HTML >
+<html>
+	<head>
+		<link href="css/tables.css" rel="stylesheet" type="text/css">
+	</head>
+	<body>
+        <script>
+            function datewriter(){
+                var now = new Date;
+                month=now.getMonth()+1;
+                document.write("Сегодня "+now.getDay()+":"+month+":"+now.getFullYear());
+                document.writeln(" Время "+now.getHours()+":"+now.getMinutes()+":"+now.getSeconds());
+            }
+
+            function life(){
+                
+                day = prompt("введите день когда вы родились");
+                month = prompt("месяц");
+                year = prompt("Год");
+                var bd = new Date(year,month,day);
+                var now = new Date();
+                var life = now-bd;
+                var days = (((life/1000)/60)/60)/24;
+                document.getElementById("textbox1").value=days;
+
+                
+            }
+
+
+            function plus(){
+                var hours = prompt("Введите количество часов");
+			var min = prompt("Введите количество минут");
+			if (min!="59") {
+				min=parseInt(min)+1;
+				alert("Через минуту будет"+hours+":"+ min);
+			} else{
+				hours=parseInt(hours)+1;
+				alert("Через минуту будет"+hours+":00");
+			}
+            }
+        </script>
+		<div>
+            <p><script>datewriter();</script></p>
+            
+            <input id="textbox1" type="text" >
+            
+            <input type="button" value="Click" onclick="plus();life();">
+
+        </div>
+        <div>
+            <script>
+                function solve(){
+                    _x=document.getElementById("x").value;
+                    _y=document.getElementById("y").value;
+                    res = Math.sqrt(Math.pow(0-_x,2)+Math.pow(0-_y,2));
+                    alert(res);
+                }
+            </script>
+            <p><input id="x" type="text"> X</p>
+            <p><input id="y" type="text"> Y</p>
+            <p><input type="button" value="Расчитать" onclick="solve();"> </p>
+        </div>
+		<div id="testtables">
+			<script>
+                var n=10;
+                document.write("<table>");
+                for (i=1;i<=n;i=i+1){
+                    document.write("<tr>");
+                    for (j=1;j<=n;j=j+1)
+                    {
+                        if (j<i) s="class='r2'";//orange
+                        else s="class='r1'";//blue
+                        document.write("<td "+s+"> </td>");
+                    }
+                    document.write("</tr>");
+                }
+                document.write("</table>");
+            </script>
+        </div>
+        <div id="table2">
+            <script>
+                var n=10;
+                st=1;
+                document.write("<table>");
+                for (i=1;i<=n;i=i+1){
+                    document.write("<tr>");
+                    for (j=1;j<=n;j=j+1)
+                    {
+                        if (st==3) 
+                        {
+                            s="class='m2'";
+                            st=0;
+                        }//plum
+                        else s="class='m1'";//blue
+                        document.write("<td "+s+"> </td>");
+                        st=st+1;
+                    }
+                    document.write("</tr>");
+                }
+                document.write("</table>");
+            </script>
+        </div>
+		
+			
+		
+	</body>
+</html>

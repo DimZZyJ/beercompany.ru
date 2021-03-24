@@ -1,0 +1,16 @@
+<script>
+			var name = prompt("Введите имя и фамилию");
+			var result = confirm("Все верно ?");
+			if (result==true) alert("Привет "+name);
+			else alert("Неверное имя и фамилия");
+			
+			var hours = prompt("Введите количество часов");
+			var min = prompt("Введите количество минут");
+			if (min!="59") {
+				min=parseInt(min)+1;
+				alert("Через минуту будет"+hours+":"+ min);
+			} else{
+				hours=parseInt(hours)+1;
+				alert("Через минуту будет"+hours+":00");
+			}
+		</script>
